@@ -22,6 +22,7 @@ use App\Http\Controllers\StampController;
 Route::get('/display', [DisplayController::class, 'index']);
 
 Route::get('/memo', [MemoController::class, 'index']);
+Route::get('/show', [MemoCOntroller::class, 'show']);
 Route::get('/schedule-add', [MemoController::class, 'scheduleAdd']);
 Route::get('/schedule-get', [MemoController::class, 'scheduleGet']);
 

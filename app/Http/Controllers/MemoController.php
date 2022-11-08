@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Memo;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use App\Calender\Calender;
 
 class MemoController extends Controller
 {
@@ -12,6 +12,12 @@ class MemoController extends Controller
     {
         return view('/memo');
     }
+    /*public function show()
+    {
+        $calender = new Calender(time());
+
+        return view('/memo', ["calender" => $calender]);
+    }*/
     public function scheduleAdd(Request $request)
     {
         $request->validate([
@@ -20,7 +26,7 @@ class MemoController extends Controller
             'event_name' => 'required | max:200'
         ]);
         //登録処理
-        $schedule = new Schedule(time());
+        $schedule = new Schedule();
         //日付の変換。javascriptのタイムスタンプはミリ秒なので秒に変換
         $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
@@ -31,7 +37,7 @@ class MemoController extends Controller
     }
     public function scheduleGet(Request $request)
     {
-        $schedule = new Schedule(time());
+        $schedule = new Schedule();
         $request->validate([
             'start_date' => 'required | integer',
             'end_time' => 'required | integer'

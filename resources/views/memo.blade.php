@@ -60,14 +60,15 @@
       <h2 class="main-title">カレンダー</h2>
     </div>
     <div class="container">
-   <div class="row justify-content-center">
-       <div class="col-md-8">
-           <div class="card">
-               <div class="card-body">{{$schedule}}</div>
-           </div>
+       <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">{{ $schedule->getTitle() }}</div>
+                  <div class="card-body">{!! $schedule->render() !!}</div>
+              </div>
+          </div>
        </div>
-   </div>
-</div>
+    </div>
     <div class="sub-title">
       <small>@Emontions,inc</small>
     </div>
