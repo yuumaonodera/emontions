@@ -63,8 +63,8 @@
        <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">{{ $schedule->getTitle() }}</div>
-                  <div class="card-body">{!! $schedule->render() !!}</div>
+                  <div class="card-header">{{ $memo->getTitle() }}</div>
+                  <div class="card-body">{!! $memo->render() !!}</div>
               </div>
           </div>
        </div>

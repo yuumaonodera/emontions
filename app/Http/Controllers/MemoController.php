@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Memo;
 use Illuminate\Http\Request;
-use App\Calender\Calender;
 
 class MemoController extends Controller
 {
@@ -26,18 +25,18 @@ class MemoController extends Controller
             'event_name' => 'required | max:200'
         ]);
         //登録処理
-        $schedule = new Schedule();
+        $memo = new Memo();
         //日付の変換。javascriptのタイムスタンプはミリ秒なので秒に変換
-        $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
-        $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
-        $schedule->event_name = $request->input('event_name');
-        $schedule->save();
+        $memo->start_date = date('Y-m-d', $request->input('start_date') / 1000);
+        $memo->end_date = date('Y-m-d', $request->input('end_date') / 1000);
+        $memo->event_name = $request->input('event_name');
+        $memo->save();
 
-        return view('/memo', ["schedule" => $schedule]);
+        return view('/memo', ["memo" => $memo]);
     }
     public function scheduleGet(Request $request)
     {
-        $schedule = new Schedule();
+        $memo = new Memo();
         $request->validate([
             'start_date' => 'required | integer',
             'end_time' => 'required | integer'
@@ -45,7 +44,7 @@ class MemoController extends Controller
         $start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $end_date = date('Y-m-d', $request->input('end_time') / 1000);
 
-        return Schedule::query()
+        return Memo::query()
             ->select(
                 'start_date as start',
                 'end_date as end',
@@ -55,6 +54,6 @@ class MemoController extends Controller
             ->where('end_date', '<', $end_date)
             ->get();
 
-        return view('/memo', ["schedule" => $schedule]);
+        return view('/memo', ["memo" => $memo]);
     }
 }
