@@ -25,6 +25,9 @@ Route::get('/memo', [MemoController::class, 'index']);
 Route::get('/show', [MemoCOntroller::class, 'show']);
 Route::get('/schedule-add', [MemoController::class, 'scheduleAdd']);
 Route::get('/schedule-get', [MemoController::class, 'scheduleGet']);
+Route::get('/memo2', function() {
+  return view('/memo');
+});
 
 Route::get('/login', [LoginController::class, 'index']);
 
