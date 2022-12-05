@@ -40,9 +40,10 @@ let calendar = new Calendar(calendarEl, {
             allDay: true,
           });
         })
-        .catch(() => {
+        .catch((e) => {
           // バリデーションエラーなど
           alert("登録に失敗しました");
+          throw e
         });
     }
   },
@@ -59,9 +60,10 @@ let calendar = new Calendar(calendarEl, {
           // カレンダーに読み込み
           successCallback(response.data);
         })
-        .catch(() => {
+        .catch((e) => {
           // バリデーションエラーなど
           alert("登録に失敗しました");
+          throw e
         });
     },
 });

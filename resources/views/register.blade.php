@@ -73,22 +73,25 @@
   <div class="register-group">
     <h2 class="register">会員登録</h2>
   </div>
-  <div class="name">
-    <input type="text" name="name" placeholder="お名前" size="50" class="name" color="gray">
-  </div>
-  <div class="meal">
-    <input type="text" name="meal" placeholder="メールアドレス" size="50" class="meal">
-  </div>
-  <div class="password">
-    <input type="text" name="password" placeholder="パスワード" size="50" class="password">
-  </div>
-  <div class="check">
-    <input type="text" name="check" placeholder="確認用パスワード" size="50" class="check">
-  </div>
-  <div class="entory">
-    <input type="submit" value="会員登録" class="register-entory">
-  </div>
-  <div class="sub_title">
-    <small>@Emontions,inc</small>
-  </div>
+  <form action="/register" method="POST">
+    @csrf
+    <div class="name">
+      <input type="text" name="name" placeholder="お名前" size="50" class="name" color="gray">
+    </div>
+    <div class="meal">
+      <input type="text" name="meal" placeholder="メールアドレス" size="50" class="meal">
+    </div>
+    <div class="password">
+      <input type="text" name="password" placeholder="パスワード" size="50" class="password">
+    </div>
+    <div class="check">
+      <input type="text" name="check" placeholder="確認用パスワード" size="50" class="check">
+    </div>
+    <div class="entory">
+      <input type="submit" value="会員登録" class="register-entory">
+    </div>
+  </form>
+    <div class="sub_title">
+      <small>@Emontions,inc</small>
+    </div>
 </body>

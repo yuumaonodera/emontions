@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MemoController;
 use App\Http\Controllers\RegisterController;
+use App\http\Controllers\DisplayController;
+use App\Http\Controllers\MemoController;
 use App\Http\Controllers\StampController;
 
 /*
@@ -18,6 +18,9 @@ use App\Http\Controllers\StampController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/display', [DisplayController::class, 'index']);
 
@@ -30,7 +33,9 @@ Route::get('/memo2', function() {
 });
 
 Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'checkUser']);
 
-Route::get('register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/', [StampController::class, 'index']);

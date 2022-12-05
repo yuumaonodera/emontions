@@ -11,12 +11,12 @@ class MemoController extends Controller
     {
         return view('/memo');
     }
-    /*public function show()
+    public function show()
     {
         $calender = new Calender(time());
 
         return view('/memo', ["calender" => $calender]);
-    }*/
+    }
     public function scheduleAdd(Request $request)
     {
         $request->validate([

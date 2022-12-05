@@ -69,25 +69,28 @@
       <h2 class="apri-name">EMONTIONS</h2>
     </div>
   </div>
-  <div class="subtitle">
-    <h2 class="login">LOGIN</h2>
-  </div>
-  <div class="meal">
-    <input type="text" name="emali" placeholder="メールアドレス" size="50px" class="meal" >
-  </div>
-  <div class="password">
-    <input type="text" name="password" placeholder="パスワード" size="50px" class="password">
-  </div>
-  <div class="not have">
-    <h4>会員登録していない人はこちらから</h4>
-  </div>
-  <div class="register">
-    <a href="/register">会員登録</a>
-  </div>
-  <div class="login-1">
-    <input type="submit" value="ログイン" class="login-2">
-  </div>
-  <div class="small_title">
-    <small>@Emontions,inc</small>
-  </div>
+  <form action="/login" method="POST">
+    @csrf
+    <div class="subtitle">
+      <h2 class="login">LOGIN</h2>
+    </div>
+    <div class="meal">
+      <input type="text" name="emali" placeholder="メールアドレス" size="50px" class="meal" >
+    </div>
+    <div class="password">
+      <input type="text" name="password" placeholder="パスワード" size="50px" class="password">
+    </div>
+    <div class="not have">
+      <h4>会員登録していない人はこちらから</h4>
+    </div>
+    <div class="register">
+      <a href="/register">会員登録</a>
+    </div>
+    <div class="login-1">
+      <input type="submit" value="ログイン" class="login-2">
+    </div>
+  </form>
+    <div class="small_title">
+      <small>@Emontions,inc</small>
+    </div>
 </body>
