@@ -13,7 +13,7 @@ class MemoController extends Controller
     }
     public function show()
     {
-        $calender = new Calender(time());
+        $calender = new Calendar(time());
 
         return view('/memo', ["calender" => $calender]);
     }
@@ -25,7 +25,7 @@ class MemoController extends Controller
             'event_name' => 'required | max:200'
         ]);
         //登録処理
-        $memo = new Memo();
+        $memo = new Calendar();
         //日付の変換。javascriptのタイムスタンプはミリ秒なので秒に変換
         $memo->start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $memo->end_date = date('Y-m-d', $request->input('end_date') / 1000);
@@ -36,7 +36,7 @@ class MemoController extends Controller
     }
     public function scheduleGet(Request $request)
     {
-        $memo = new Memo();
+        $memo = new Calendar();
         $request->validate([
             'start_date' => 'required | integer',
             'end_time' => 'required | integer'
@@ -44,7 +44,7 @@ class MemoController extends Controller
         $start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $end_date = date('Y-m-d', $request->input('end_time') / 1000);
 
-        return Memo::query()
+        return Calendar::query()
             ->select(
                 'start_date as start',
                 'end_date as end',
