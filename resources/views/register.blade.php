@@ -79,7 +79,7 @@
       <input type="text" name="name" placeholder="お名前" size="50" class="name" color="gray">
     </div>
     <div class="meal">
-      <input type="text" name="meal" placeholder="メールアドレス" size="50" class="meal">
+      <input type="text" name="email" placeholder="メールアドレス" size="50" class="meal">
     </div>
     <div class="password">
       <input type="text" name="password" placeholder="パスワード" size="50" class="password">

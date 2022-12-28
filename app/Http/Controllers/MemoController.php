@@ -25,7 +25,7 @@ class MemoController extends Controller
             'event_name' => 'required | max:200'
         ]);
         //登録処理
-        $memo = new Calendar();
+        $memo = new Memo();
         //日付の変換。javascriptのタイムスタンプはミリ秒なので秒に変換
         $memo->start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $memo->end_date = date('Y-m-d', $request->input('end_date') / 1000);
@@ -36,7 +36,7 @@ class MemoController extends Controller
     }
     public function scheduleGet(Request $request)
     {
-        $memo = new Calendar();
+        $memo = new Memo();
         $request->validate([
             'start_date' => 'required | integer',
             'end_time' => 'required | integer'
