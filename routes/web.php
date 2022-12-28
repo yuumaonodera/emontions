@@ -32,10 +32,10 @@ Route::get('/memo2', function() {
   return view('/memo');
 });
 
-/*Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'checkUser']);
 
 Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'create']);*/
+Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/', [StampController::class, 'index']);

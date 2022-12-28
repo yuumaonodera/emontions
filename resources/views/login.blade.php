@@ -75,7 +75,7 @@
       <h2 class="login">LOGIN</h2>
     </div>
     <div class="meal">
-      <input type="text" name="emali" placeholder="メールアドレス" size="50px" class="meal" >
+      <input type="text" name="email" placeholder="メールアドレス" size="50px" class="meal" >
     </div>
     <div class="password">
       <input type="text" name="password" placeholder="パスワード" size="50px" class="password">
