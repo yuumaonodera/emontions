@@ -16482,16 +16482,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.js");
-/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
+/* harmony import */ var _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fullcalendar/core */ "./node_modules/@fullcalendar/core/main.js");
+/* harmony import */ var _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fullcalendar/daygrid */ "./node_modules/@fullcalendar/daygrid/main.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 calendarEl = document.getElementById("calendar");
-var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(calendarEl, {
-  plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"]],
+var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__.Calendar(calendarEl, {
+  plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"]],
   initialView: "dayGridMonth",
   headerToolbar: {
     left: "prev,next today",
@@ -16508,7 +16508,7 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
     var eventName = prompt("イベントを入力してください");
     if (eventName) {
       // Laravelの登録処理の呼び出し
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/schedule-add", {
+      axios__WEBPACK_IMPORTED_MODULE_2___default().post("/schedule-add", {
         start_date: info.start.valueOf(),
         end_date: info.end.valueOf(),
         event_name: eventName
@@ -16529,7 +16529,7 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
   },
   events: function events(info, successCallback, failureCallback) {
     // Laravelのイベント取得処理の呼び出し
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post("/schedule-get", {
+    axios__WEBPACK_IMPORTED_MODULE_2___default().post("/schedule-get", {
       start_date: info.start.valueOf(),
       end_date: info.end.valueOf()
     }).then(function (response) {
@@ -16546,8 +16546,8 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(cale
 });
 calendar.render();
 var calendarEl = document.getElementById("calendar");
-var memo = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_1__.Calendar(calendarEl, {
-  plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"]],
+var memo = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__.Calendar(calendarEl, {
+  plugins: [_fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_1__["default"]],
   initialView: "dayGridMonth",
   headerToolbar: {
     left: "prev,next today",

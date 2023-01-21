@@ -48,9 +48,13 @@
       text-align:center;
       margin-top:10px;
     }
+    .login{
+      text-align:center;
+      margin-top:15px;
+    }
     .entory{
       text-align:center;
-      margin-top:30px;
+      margin-top:20px;
       color:white;
     }
     .register-entory{
@@ -76,7 +80,7 @@
   <form action="/register" method="POST">
     @csrf
     <div class="name">
-      <input type="text" name="name" placeholder="お名前" size="50" class="name" color="gray">
+      <input type="text" name="name" placeholder="name" size="50" class="name" color="gray">
     </div>
     <div class="meal">
       <input type="text" name="email" placeholder="メールアドレス" size="50" class="meal">
@@ -86,6 +90,9 @@
     </div>
     <div class="check">
       <input type="text" name="check" placeholder="確認用パスワード" size="50" class="check">
+    </div>
+    <div class="login">
+      <a href="/login">ログイン</a>
     </div>
     <div class="entory">
       <input type="submit" value="会員登録" class="register-entory">

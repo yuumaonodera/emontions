@@ -1,13 +1,13 @@
-import axios from 'axios';
 import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import axios from 'axios';
 
 
 calendarEl = document.getElementById("calendar");
 
 let calendar = new Calendar(calendarEl, {
   plugins: [dayGridPlugin],
-  initialView: "dayGridMonth",
+  initialView: "dayGridMonth", 
   headerToolbar: {
     left: "prev,next today",
     center: "title",
@@ -69,9 +69,9 @@ let calendar = new Calendar(calendarEl, {
 });
 calendar.render();
 
-var calendarEl = document.getElementById("calendar");
+//var calendarEl = document.getElementById("calendar");
 
-let memo = new Calendar(calendarEl, {
+let Calendar = new Calendar(calendarEl, {
   plugins: [dayGridPlugin],
   initialView: "dayGridMonth",
   headerToolbar: {
