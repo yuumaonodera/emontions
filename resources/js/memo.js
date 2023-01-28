@@ -1,5 +1,8 @@
 import { Calendar } from "@fullcalendar/core";
+import interactionPlugin from "@fullcalendar/interaction";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from "@fullcalendar/list";
 import axios from 'axios';
 
 
@@ -69,9 +72,9 @@ let calendar = new Calendar(calendarEl, {
 });
 calendar.render();
 
-//var calendarEl = document.getElementById("calendar");
+var calendarEl = document.getElementById("calendar");
 
-let Calendar = new Calendar(calendarEl, {
+let memo = new Calendar(calendarEl, {
   plugins: [dayGridPlugin],
   initialView: "dayGridMonth",
   headerToolbar: {
